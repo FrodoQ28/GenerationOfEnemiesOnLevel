@@ -4,8 +4,6 @@ public class Enemy : MonoBehaviour
 {
     private Vector3 _movementDirection;
 
-    public Vector3 MovementDirection { set {  _movementDirection = value; } }
-
     private void Awake()
     {
         _movementDirection = Vector3.zero;
@@ -15,4 +13,7 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(_movementDirection * Time.deltaTime);
     }
+
+    public void SetMovementDirection(Vector3 movementDirection) =>
+        _movementDirection = movementDirection;
 }

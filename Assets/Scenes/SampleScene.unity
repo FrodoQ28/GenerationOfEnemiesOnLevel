@@ -469,11 +469,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e35847c5d1c3a4db343119c5bf4a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPoint1: {fileID: 115426975}
-  _spawnPoint2: {fileID: 471170201}
-  _spawnPoint3: {fileID: 358383885}
-  _spawnPoint4: {fileID: 1446117268}
   _enemyPrefab: {fileID: 1697169543408309143, guid: 9535e22d5e2dded469fcf347edaf972a, type: 3}
+  _spawnPoints:
+  - {fileID: 115426975}
+  - {fileID: 471170201}
+  - {fileID: 358383885}
+  - {fileID: 1446117268}
 --- !u!4 &1008000837
 Transform:
   m_ObjectHideFlags: 0
