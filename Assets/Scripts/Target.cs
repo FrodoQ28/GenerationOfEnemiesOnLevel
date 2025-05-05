@@ -10,14 +10,18 @@ public class Target : MonoBehaviour
 
     private void Awake()
     {
-        transform.position = _waypoints[_currentWaypoint].transform.position;
+        if (_waypoints != null)
+            transform.position = _waypoints[_currentWaypoint].transform.position;
     }
 
     private void Update()
     {
-        if (transform.position == _waypoints[_currentWaypoint].transform.position)
-            _currentWaypoint = (_currentWaypoint + 1) % _waypoints.Count;
+        if (_waypoints != null)
+        {
+            if (transform.position == _waypoints[_currentWaypoint].transform.position)
+                _currentWaypoint = (_currentWaypoint + 1) % _waypoints.Count;
 
-        transform.position = Vector3.MoveTowards(transform.position, _waypoints[_currentWaypoint].transform.position, _speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _waypoints[_currentWaypoint].transform.position, _speed * Time.deltaTime);
+        }
     }
 }
