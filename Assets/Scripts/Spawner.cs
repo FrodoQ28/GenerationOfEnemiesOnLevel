@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemyPrefab;
     [SerializeField] private List<SpawnPoint> _spawnPoints;
 
     private float _delay = 2f;
+    private int _currentSpawnPoint = 0;
 
     private void Start()
     {
@@ -23,8 +23,7 @@ public class Spawner : MonoBehaviour
         {
             ShuffleList();
 
-            Enemy newEnemy = Instantiate(_enemyPrefab, _spawnPoints[0].transform);
-            newEnemy.SetMovementDirection(Vector3.zero - _spawnPoints[0].transform.position);
+            _spawnPoints[_currentSpawnPoint].CreateEnemy();
 
             yield return wait;
         }
